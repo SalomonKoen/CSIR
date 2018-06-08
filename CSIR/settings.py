@@ -77,11 +77,10 @@ WSGI_APPLICATION = 'CSIR.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'salomonkoen$csirdb',
-        'USER': 'salomonkoen',
-        'PASSWORD': 'zxcvbnm,./',
-        'HOST': 'salomonkoen.mysql.pythonanywhere-services.com',
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'csirdb',
+        'USER': 'root',
+        'PASSWORD': 'zxcvbnm',
     }
 }
 
