@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'CSIR.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'csirdb',
         'USER': 'root',
         'PASSWORD': 'zxcvbnm',
