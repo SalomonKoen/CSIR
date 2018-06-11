@@ -1,0 +1,22 @@
+{% extends "base/base_body.html" %}
+{% block maincontent %}
+	<div class="px-4">
+	<h1 class="display-4">Glider Mission</h1>
+	<table class="table table-borderless table-sm">
+		<tbody>
+			<tr class="d-flex">
+				<td class="col-0"><b>Mission: </b></td>
+				<td>{{ mission.name }}</td>
+			</tr>
+			<tr class="d-flex">
+				<td class="col-0"><b>Glider: </b></td>
+				<td>{{ glider.name }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+	<h1 class="h3 font-weight-normal">Sensor Information</h1>
+	{{ datatable.render|safe }}
+	<hr>
+	</div>
+{% endblock %}

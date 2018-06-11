@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% block content %}
+	<h1 class="display-4">Mission</h1>
+	<table class="table table-borderless table-sm">
+		<tbody>
+			<tr class="d-flex">
+				<td class="col-0"><b>Name: </b></td>
+				<td>{{ mission.name }}</td>
+			</tr>
+			<tr class="d-flex">
+				<td class="col-0"><b>Period: </b></td>
+				<td>{{ mission.get_display_start_date }} <i class="fas fa-long-arrow-alt-right"></i> {{ mission.get_display_end_date }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+	<h1 class="h3 font-weight-normal">Glider Information</h1>
+	{{ datatable.render|safe }}
+	<hr>
+	<button type="button" class="btn btn-secondary" onclick="window.location='/mission/search';">Back</button>
+{% endblock %}
