@@ -21,7 +21,8 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="base/base.html")),
-    path('mission/search', views.render_missions),
+    path('mission/search', views.render_missions_search),
+    path('glider/search', views.render_gliders_search),
     path('mission/view', views.render_mission),
     path('mission/glidermission/view', views.render_glider_mission)
 ]

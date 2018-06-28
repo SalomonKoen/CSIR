@@ -1,8 +1,10 @@
 {% extends "base/base.html" %}
+{% load static %}
 {% block content %}
-	<h1 class="display-4">Missions</h1>
+	<h1 class="display-4">{{ title }}</h1>
+	<hr>
 	<hr>
 	<div class="table-responsive">
-		{{ datatable.render|safe }}
+		{{ searchDataTable.render|safe }}
 	</div>
 {% endblock %}

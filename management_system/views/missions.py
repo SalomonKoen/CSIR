@@ -3,8 +3,9 @@ from _pydecimal import Decimal
 from django.shortcuts import render
 from management_system.classes.DataTableBuilder import *
 from management_system.models import Mission, MissionGlider, SensorCalibration
+from .generic import render_generic_search_page
 
-def render_missions(request):
+def render_missions_search(request):
     dataTable = DataTable('missions', 'table table-striped table-sm', '', '"order":[[1,\'asc\']]')
     dataTable.set_header_row(HeaderRow('Name', 'Start Date', 'End Date'))
 
@@ -14,7 +15,7 @@ def render_missions(request):
                                   '<span hidden>%s</span>%s' % (mission.endDate.strftime('%Y%m%d'), mission.endDate.strftime('%d-%m-%Y')),
                                   js='window.location=\'/mission/view?id=%s\';' % mission.id))
 
-    return render(request, 'mission/search.html', { 'datatable' : dataTable })
+    return render_generic_search_page(request, 'Missions', dataTable)
 
 def render_mission(request):
     mission = Mission.objects.get(id=request.GET['id'])
